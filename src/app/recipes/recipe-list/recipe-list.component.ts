@@ -6,9 +6,12 @@ import { Recipe } from '../recipe';
   templateUrl: './recipe-list.component.html'
 })
 export class RecipeListComponent implements OnInit {
-  recipes: Recipe[] = [];
+  recipes: Recipe[] = [
+    new Recipe('Curry', 'Very tasty', 'http://bigoven-res.cloudinary.com/image/upload/t_recipe-256/thai-shrimp-curry-17.jpg', []),
+    new Recipe('Sushi', 'Good!', 'http://english-master.info/img/sushi-1-icon.png', [])
+  ];
   @Output() recipeSelected = new EventEmitter<Recipe>();
-  recipe = new Recipe('Dummy', 'Dummy', 'http://cdn1.www.st-hatena.com/users/bo/book-life/profile.gif?1422593169');
+
 
   constructor() { }
 
