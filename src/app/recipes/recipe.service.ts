@@ -11,6 +11,14 @@ export class RecipeService {
     new Recipe('Sushi', 'Good!', 'http://english-master.info/img/sushi-1-icon.png', [
       new Ingredient('Squid', 4),
       new Ingredient('Rice', 5)
+    ]),
+    new Recipe('Takoyaki', 'The sauce!', 'http://jpninfo.com/wp-content/uploads/2015/09/takoyaki1.jpg', [
+      new Ingredient('Octopus', 2),
+      new Ingredient('Flour', 3)
+    ]),
+    new Recipe('Sukiyaki', 'Very good!', 'https://media-cdn.tripadvisor.com/media/photo-s/07/d4/75/61/tokyo-sukiyaki-tei.jpg', [
+      new Ingredient('Beef', 2),
+      new Ingredient('Sauce', 3)
     ])
   ];
 
@@ -21,5 +29,9 @@ export class RecipeService {
 
   getRecipe(id: number) {
     return this.recipes[id];
+  }
+
+  deleteRecipe(recipe: Recipe) {
+    this.recipes.splice(this.recipes.indexOf(recipe), 1)
   }
 }
